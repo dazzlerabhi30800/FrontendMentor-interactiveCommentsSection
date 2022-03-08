@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Interactive comments section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="delete-box" id="deletebox">
+    <!-- <div class="delete-comment">
+      <h3>Delete Comment</h3>
+      <p>Are your sure you want to delete this comment?
+        this will remove the comment and can't be undone.
+      </p>
+      <div class="delete-options">
+        <button id="no">no, cancel</button>
+        <button id="yes">yes,delete</button>
+      </div>
+    </div> -->
+  </div>
+
+ <main class="container">
+   <div class="comments-section">
+     <div class="first-section" id="comm-list">
+
+       <!-- <div class="comment-wrapper">
+         <div class="profile-wrapper">
+          <div class="profile-img">
+            <img src="images/avatars/image-amyrobson.png" alt="">
+          </div>
+          <h1 class="name">amyrobson</h1>
+          <span class="you"></span>
+          <p class="post-time">1 month ago</p>
+         </div>
+         <div class="comment-paragraph">
+           <p>
+            Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+           </p>
+         </div>
+         <div class="footer-comment-section">
+           <div class="counter-wrapper">
+             <i class="fas fa-plus"></i>
+             <span class="upvote"></span>
+             <i class="fas fa-minus"></i>
+           </div>
+           <div class="reply-button">
+             <i class="fas fa-reply"></i>
+             <span class="reply">Reply</span>
+           </div>
+         </div>
+       </div>
+
+       <div class="comment-wrapper">
+        <div class="profile-wrapper">
+         <div class="profile-img">
+           <img src="images/avatars/image-maxblagun.png" alt="">
+         </div>
+         <h1 class="name">maxblagan</h1>
+         <p class="post-time">2 Weeks ago</p>
+        </div>
+        <div class="comment-paragraph">
+          <p>
+            Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!
+          </p>
+        </div>
+        <div class="footer-comment-section">
+          <div class="counter-wrapper">
+            <i class="fas fa-plus"></i>
+            <span class="upvote"></span>
+            <i class="fas fa-minus"></i>
+          </div>
+          <div class="reply-button">
+            <i class="fas fa-reply"></i>
+            <span class="reply">Reply</span>
+          </div>
+        </div>
+      </div> -->
+
+
+     </div>
+
+     <div class="second-section" id="reply-list">
+
+      <!-- <div class="comment-wrapper">
+        <div class="profile-wrapper">
+         <div class="profile-img">
+           <img src="images/avatars/image-ramsesmiron.png" alt="">
+         </div>
+         <h1 class="name">ramsesmiron</h1>
+        
+         <p class="post-time">1 Week ago</p>
+        </div>
+        <div class="comment-paragraph">
+          <p>
+           <span class="user-name">@maxblagun</span> If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.
+          </p>
+        </div>
+        <div class="footer-comment-section">
+          <div class="counter-wrapper">
+            <i class="fas fa-plus"></i>
+            <span class="upvote"></span>
+            <i class="fas fa-minus"></i>
+          </div>
+          <div class="reply-button">
+            <i class="fas fa-reply"></i>
+            <span class="reply">Reply</span>
+          </div>
+        </div>
+      </div>
+
+     
+
+      <div class="comment-wrapper">
+       <div class="profile-wrapper">
+        <div class="profile-img">
+          <img src="images/avatars/image-juliusomo.png" alt="">
+        </div>
+        <h1 class="name">juliusomo</h1>
+        <span class="you">you</span>
+        <p class="post-time">2 days ago</p>
+       </div>
+       <div class="comment-paragraph">
+         <p>
+          Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!
+         </p>
+       </div>
+       <div class="footer-comment-section">
+         <div class="counter-wrapper">
+           <i class="fas fa-plus"></i>
+           <span class="upvote"></span>
+           <i class="fas fa-minus"></i>
+         </div>
+         <div class="button-wrapper">
+
+           <div class="trash-button">
+             <i class="fas fa-trash"></i>
+             <span class="trash">Delete</span>
+            </div>
+            <div class="edit-button">
+              <i class="fas fa-edit"></i>
+              <span class="edit">Edit</span>
+            </div>
+
+          </div>
+       </div>
+     </div> -->
+
+     </div>
+   </div>
+
+   <!-- <div class="hiddenbox" id="hiddenbox">
+    <img src= "images/avatars/image-juliusomo.png" alt="">
+    <textarea class = "textcomm"></textarea>
+    <input type="submit"value="REPLY" class="submit">
+  </div> -->
+
+   <div class="add-comment" id="addcontainer">
+    <!-- <img src="images/avatars/image-juliusomo.png" alt=""> -->
+     <input type="text" placeholder="Add a comment" name="comment1" id="comment-box" class="desktop-screen">
+     <input type="submit" value="SEND" class="submit">
+   </div>
+ </main>
+
+  <!-- Pull dynamic content from the data.json file -->
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+<script src="main.js"></script>
+<script src="function.js"></script>
+</html>
