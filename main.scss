@@ -435,3 +435,13 @@ body {
         height : 200%;
     }
 }
+
+@media screen and (min-width : 1200px) {
+    .second-section {
+        position : relative;
+        left : 10%;
+    }
+    .comment-wrapper {
+        min-width : 1000px;
+    }
+}
