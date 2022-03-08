@@ -88,7 +88,7 @@ function updateComment(id) {
  const inputText = document.getElementById('comment-box');
  const replyList = document.getElementById('reply-list');
  const deleteBtn = document.querySelector('.trash');
- console.log(deleteBtn);
+//  console.log(deleteBtn);
 
 
  form.addEventListener('click', (e) => {
@@ -99,6 +99,7 @@ function updateComment(id) {
         alert('please input some value');
         return
     }
+   
 
     replyList.insertAdjacentHTML('beforeend', 
     `
@@ -126,7 +127,7 @@ function updateComment(id) {
 
            <div class="trash-button">
              <i class="fas fa-trash"></i>
-             <span class="trash" onclick="deleteThis()">Delete</span>
+             <span class="trash" onclick="deleteThis(); deleteComments();">Delete</span>
             </div>
             <div class="edit-button">
               <i class="fas fa-edit"></i>
@@ -138,6 +139,9 @@ function updateComment(id) {
       </div>
 
     `);
+    saveLocalComments(inputText.value);
+    inputText.value = "";
+
 
     
 
@@ -147,3 +151,92 @@ function updateComment(id) {
  function deleteThis (){
      this.document.querySelector('#one').remove();
  }
+
+
+//  Saving to the local storage 
+
+function saveLocalComments(comm) {
+    let comms;
+    if(localStorage.getItem("comms") === null){
+        comms = [];
+    } else {
+        comms = JSON.parse(localStorage.getItem("comms"));
+    }
+    comms.push(comm);
+    localStorage.setItem("comms", JSON.stringify(comms));
+}
+
+
+document.addEventListener("DOMContentLoaded", getComments);
+
+function getComments() {
+    console.log("comments is working!");
+    let comms;
+    if(localStorage.getItem("comms") === null){
+        comms = [];
+    } else{
+        comms = JSON.parse(localStorage.getItem("comms"));
+    }
+
+
+    comms.forEach(function(comm) {
+        replyList.insertAdjacentHTML('beforeend', 
+    `
+    <div class="comment-wrapper" id="one">
+        <div class="profile-wrapper">
+         <div class="profile-img">
+           <img src="images/avatars/image-juliusomo.png" alt="">
+         </div>
+         <h1 class="name">juliusomo</h1>
+        
+         <p class="post-time">1 Week ago</p>
+        </div>
+        <div class="comment-paragraph">
+          <p>
+           <span class="user-name">@maxblagun</span> ${comm}
+          </p>
+        </div>
+        <div class="footer-comment-section">
+         <div class="counter-wrapper">
+           <i class="fas fa-plus"></i>
+           <span class="upvote"></span>
+           <i class="fas fa-minus"></i>
+         </div>
+         <div class="button-wrapper">
+
+           <div class="trash-button">
+             <i class="fas fa-trash"></i>
+             <span class="trash" onclick="deleteThis(); deleteComments();">Delete</span>
+            </div>
+            <div class="edit-button">
+              <i class="fas fa-edit"></i>
+              <span class="edit">Edit</span>
+            </div>
+
+          </div>
+       </div>
+      </div>
+
+    `);
+    })
+}
+
+function deleteComments (){
+    const paraComm = document.querySelector('.comment-paragraph p');
+    removeLocalComments(paraComm);
+}
+
+
+function removeLocalComments(comm) {
+    console.log("is working");
+    let comms;
+    if(localStorage.getItem("comms") === null){
+        comms = [];
+    } else{
+        comms = JSON.parse(localStorage.getItem("comms"));
+    };
+    const commIndex = comm.innerText;
+    comms.splice(comms.indexOf(commIndex), 1);
+    localStorage.setItem("comms", JSON.stringify(comms));
+
+}
