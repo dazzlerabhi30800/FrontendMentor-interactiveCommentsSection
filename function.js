@@ -115,6 +115,7 @@ function updateComment(id) {
            <img src="images/avatars/image-juliusomo.png" alt="">
          </div>
          <h1 class="name">juliusomo</h1>
+         <span class="you">you</span>
         
          <p class="post-time">1 Week ago</p>
         </div>
@@ -203,6 +204,7 @@ function getComments() {
            <img src="images/avatars/image-juliusomo.png" alt="">
          </div>
          <h1 class="name">juliusomo</h1>
+         <span class="you">you</span>
         
          <p class="post-time">1 Week ago</p>
         </div>
