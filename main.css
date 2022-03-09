@@ -533,6 +533,60 @@ body {
   background: #ee6e6e;
 }
 
+.edit-box {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 700px;
+  min-height: 100px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  padding: 10px;
+  margin-top: 5px;
+  -webkit-box-shadow: -2px 0px 6px #424141;
+          box-shadow: -2px 0px 6px #424141;
+  color: #67727e;
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+.edit-box:hover, .edit-box:active {
+  border: 1px solid #333232;
+}
+
+.update-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  display: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: right;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: white;
+  background: #3238ec;
+  padding: 8px;
+  border-radius: 5px;
+}
+
 @media (max-width: 805px) {
   .delete-box {
     height: 200%;

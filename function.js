@@ -100,6 +100,12 @@ function updateComment(id) {
         return
     }
    
+    const randomId = Math.floor(Math.random() * 10);
+    // console.log(randomId);
+
+    
+
+   
 
     replyList.insertAdjacentHTML('beforeend', 
     `
@@ -112,26 +118,30 @@ function updateComment(id) {
         
          <p class="post-time">1 Week ago</p>
         </div>
-        <div class="comment-paragraph">
+        <div class="comment-paragraph" id="comment">
           <p>
            <span class="user-name">@maxblagun</span> ${task}
           </p>
         </div>
+        <textarea class="edit-box" id="edit-box" style="display:none;"></textarea>
+        <div class="update-div"><button class="submit-btn"  id="update">UPDATE</button></div>
+      
+
         <div class="footer-comment-section">
          <div class="counter-wrapper">
            <i class="fas fa-plus"></i>
            <span class="upvote"></span>
            <i class="fas fa-minus"></i>
          </div>
-         <div class="button-wrapper">
+         <div class="button-wrapper" id="buttonWrapper">
 
            <div class="trash-button">
              <i class="fas fa-trash"></i>
              <span class="trash" onclick="deleteThis(); deleteComments();">Delete</span>
             </div>
-            <div class="edit-button">
+            <div class="edit-button" id="editBtn">
               <i class="fas fa-edit"></i>
-              <span class="edit">Edit</span>
+              <span class="edit" onclick="UpdateComments2()">Edit</span>
             </div>
 
           </div>
@@ -139,8 +149,11 @@ function updateComment(id) {
       </div>
 
     `);
+  
     saveLocalComments(inputText.value);
     inputText.value = "";
+
+    console.log("the length is " + replyList.children.length);
 
 
     
@@ -178,6 +191,8 @@ function getComments() {
         comms = JSON.parse(localStorage.getItem("comms"));
     }
 
+    const randomId = Math.floor(Math.random() * 10);
+
 
     comms.forEach(function(comm) {
         replyList.insertAdjacentHTML('beforeend', 
@@ -191,26 +206,31 @@ function getComments() {
         
          <p class="post-time">1 Week ago</p>
         </div>
-        <div class="comment-paragraph">
+        <div class="comment-paragraph" id="comment${randomId}">
           <p>
            <span class="user-name">@maxblagun</span> ${comm}
           </p>
         </div>
+
+        <textarea class="edit-box" id="edit-box" style="display:none;"></textarea>
+        <div class="update-div"><button class="submit-btn"  id="update">UPDATE</button></div>
+
+
         <div class="footer-comment-section">
          <div class="counter-wrapper">
            <i class="fas fa-plus"></i>
            <span class="upvote"></span>
            <i class="fas fa-minus"></i>
          </div>
-         <div class="button-wrapper">
+         <div class="button-wrapper" id="buttonWrapper">
 
            <div class="trash-button">
              <i class="fas fa-trash"></i>
              <span class="trash" onclick="deleteThis(); deleteComments();">Delete</span>
             </div>
-            <div class="edit-button">
+            <div class="edit-button" id="editBtn">
               <i class="fas fa-edit"></i>
-              <span class="edit">Edit</span>
+              <span class="edit" onclick="UpdateComments2()">Edit</span>
             </div>
 
           </div>
@@ -219,7 +239,17 @@ function getComments() {
 
     `);
     })
+};
+
+function UpdateComments2() {
+//   const p = document.querySelector(`$comment{id} p`);
+//  console.log(p.innerText);
+  console.log("I will fix this soon and it'll be working!");
+
 }
+
+
+
 
 function deleteComments (){
     const paraComm = document.querySelector('.comment-paragraph p');
